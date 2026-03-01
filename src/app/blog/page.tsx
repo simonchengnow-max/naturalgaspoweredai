@@ -1,20 +1,22 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Zap, ArrowRight, Mail, MapPin } from "lucide-react"
+import { ArrowRight, Mail, MapPin, Zap } from "lucide-react"
 import Link from "next/link"
 
 const posts = [
   {
     slug: "100-week-wait-transformer-shortage",
     title: "The 100-Week Wait: How Transformer Shortages Are Stalling the Global Grid",
-    subtitle: "The global supply chain for high-voltage transformers and switchgear faces 100+ week lead times. Learn why the bottleneck exists and what developers can do to navigate it.",
+    subtitle:
+      "The global supply chain for high-voltage transformers and switchgear faces 100+ week lead times. Learn why the bottleneck exists and what developers can do to navigate it.",
     date: "2026-02-23",
     tag: "Supply Chain",
   },
   {
     slug: "ai-data-center-turbine-shortage-strategy",
     title: "The New AI Currency: Why Gas Turbines Are Sold Out (And How to Secure Power Now)",
-    subtitle: "AI data center demand has created a critical shortage of gas turbines with 3+ year lead times. Learn why GE and Baker Hughes are sold out, and uncover the remaining strategies to secure power infrastructure.",
+    subtitle:
+      "AI data center demand has created a critical shortage of gas turbines with 3+ year lead times. Learn why GE and Baker Hughes are sold out, and uncover the remaining strategies to secure power infrastructure.",
     date: "2026-02-23",
     tag: "Market Intelligence",
   },
@@ -54,15 +56,17 @@ export default function BlogPage() {
         <div className="max-w-4xl mx-auto text-center">
           <Badge className="mb-4 bg-blue-500/10 text-blue-400 border-blue-500/20">Blog</Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-balance">Insights and Analysis</h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">Industry perspectives on natural gas-powered AI infrastructure, energy markets, and the future of compute in Alberta.</p>
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+            Industry perspectives on natural gas-powered AI infrastructure, energy markets, and the future of compute in Alberta.
+          </p>
         </div>
       </section>
 
       <section className="pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto space-y-6">
           {posts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`}>
-              <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-500/50 transition-colors cursor-pointer">
+            <div key={post.slug}>
+              <Card className="bg-slate-800/50 border-slate-700 hover:border-cyan-500/50 transition-colors">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
                     <Badge className="bg-cyan-500/10 text-cyan-400 border-cyan-500/20">{post.tag}</Badge>
@@ -72,10 +76,12 @@ export default function BlogPage() {
                   <p className="text-lg text-slate-300 mt-2">{post.subtitle}</p>
                 </CardHeader>
                 <CardContent>
-                  <span className="text-cyan-400 flex items-center gap-2 font-medium">Read article <ArrowRight className="w-4 h-4" /></span>
+                  <Link href={`/blog/${post.slug}`} className="text-cyan-400 flex items-center gap-2 font-medium hover:text-cyan-300 transition-colors">
+                    Read article <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </CardContent>
               </Card>
-            </Link>
+            </div>
           ))}
         </div>
       </section>
@@ -112,8 +118,14 @@ export default function BlogPage() {
             <div>
               <h3 className="font-semibold text-white mb-4">Contact</h3>
               <ul className="space-y-3 text-slate-400">
-                <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-cyan-400" /><a href="mailto:Simon@RealCapitolHill.com" className="hover:text-white transition-colors">Simon@RealCapitolHill.com</a></li>
-                <li className="flex items-center gap-2"><MapPin className="w-4 h-4 text-cyan-400" /><span>Calgary, Alberta</span></li>
+                <li className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-cyan-400" />
+                  <a href="mailto:Simon@RealCapitolHill.com" className="hover:text-white transition-colors">Simon@RealCapitolHill.com</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-cyan-400" />
+                  <span>Calgary, Alberta</span>
+                </li>
               </ul>
             </div>
           </div>
