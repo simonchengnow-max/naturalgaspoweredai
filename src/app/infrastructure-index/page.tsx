@@ -356,7 +356,7 @@ function MunicipalPanel() {
                 </div>
                 <div className="text-right">
                   <span className="text-cyan-400 text-sm font-semibold">
-                    {(m.gasProductionE3M3 / 1000000).toFixed(1)}M e3m3
+                    {(m.gasProductionE3M3 / 1000000).toFixed(1)}M e3m³
                   </span>
                   <span className="text-slate-500 text-xs ml-2">
                     {formatNumber(m.gasWellCount)} wells
@@ -371,7 +371,7 @@ function MunicipalPanel() {
               </div>
               <div className="flex justify-between mt-0.5">
                 <span className="text-slate-600 text-xs">
-                  {(m.remainingGasReservesE3M3 / 1000000).toFixed(0)}M e3m3 reserves remaining
+                  {(m.remainingGasReservesE3M3 / 1000000).toFixed(0)}M e3m³ reserves remaining
                 </span>
                 <span className="text-slate-600 text-xs">{m.year}</span>
               </div>
